@@ -1,0 +1,47 @@
+<!DOCTYPE html5>
+<html>
+<head>
+
+<title>vatic</title>
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.css">
+
+
+<script src="turkic/javascript.js" charset="utf-8"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="videoplayer.js?v=jul1" charset="utf-8"></script>
+<script src="preload.js?v=jul1" charset="utf-8"></script>
+<script src="objectui.js?v=jul1" charset="utf-8"></script>
+<script src="ui.js?v=jul1" charset="utf-8"></script>
+<script src="instructions.js?v=jul1" charset="utf-8"></script>
+<script src="job.js?v=jul1" charset="utf-8"></script>
+<script src="tracks.js?v=jul1" charset="utf-8"></script>
+<script src="bootstrap.js?v=jul1" charset="utf-8"></script>
+<script language="javascript" src="jquery.canvasAreaDraw.js"></script>
+<script language="javascript" src="jquery.canvasAreaEdit.js"></script>
+<script type="text/javascript" language="JavaScript">
+ //<!--
+
+server_request("getfreespace", [], 
+	function(response) {
+		var el = document.getElementById('freespacespan');
+		el.innerHTML = response;
+	});
+
+
+ //-->
+ </script>
+
+
+</head>
+<body>
+
+
+<div>
+<span id="freespacespan"></span>
+</div>
+
+</body>
+</html>

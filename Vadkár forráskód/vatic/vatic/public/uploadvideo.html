@@ -1,0 +1,226 @@
+<!DOCTYPE html5>
+<html lang="hu">
+<head>
+
+<meta charset="utf-8">
+
+
+<title>vatic-feltöltés</title>
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.css">
+
+<script src="./turkic/javascript.js?v=mar8"></script>
+<script src="moment.js"></script>
+</head>
+<body>
+<h3>Videó feltöltése a VATIC rendszerbe:</h3>
+<p>
+<form enctype="multipart/form-data" id="uploadform" action="#" method="POST">
+Feltöltendő videó:<input type="file" name="file" id="videonamefield"/>
+<input type="button" name="uploadbutton" value="Feltöltés" id="videouploadbutton">
+</p>
+
+
+<p>Feltöltés Státusza:<br/><progress id="progressBar" value="0" max="100" style="width:300px;"></progress></p>
+<p id="status"></p>
+<p id="loaded_n_total"></p>
+
+<table>
+<tr><td>
+Videó neve (?mi adjuk vagy filenévből?):
+</td><td>
+<input type="text" name="videoname" id ="videoname" value="">
+</td></tr>
+<tr><td>
+Feltöltő neve (?kitölthető vagy id?):
+</td><td>
+<input type="text" name="username" id ="username" value="">
+</td></tr>
+<tr><td>
+Helyszín:
+</td><td>
+<input type="text" name="location" id ="location" value="">
+</td></tr>
+<tr><td>
+Idő:
+</td><td>
+<input type="text" name="time" id ="time" value="">
+</td></tr>
+<tr><td>
+Fényviszonyok: 
+</td><td>
+<select name="LightCondition">
+  <option value="napos">Napos</option>
+  <option value="diffuz">Diffúz</option>
+  <option value="felhoatvonulas">Felhő átvonulás</option>
+  <option value="kevert">???kevert???</option>
+</select>
+</td></tr>
+<tr><td>
+Kultúra: 
+</td><td>
+<select name="Culture">
+  <option value="kalaszos">Kalászos</option>
+  <option value="kalaszososzibuza">Kalászos-Őszi búza</option>
+  <option value="kalaszososziarpa">Kalászos-Őszi árpa</option>
+  <option value="kalaszososzitritikale">Kalászos-Őszi tritikálé</option>
+  <option value="kalaszostavaszibuza">Kalászos-Tavaszi búza</option>
+  <option value="kalaszostavasziarpa">Kalászos-Tavaszi árpa</option>
+  <option value="kalaszostavaszitritikale">Kalászos-Tavaszi tritikálé</option>
+  <option value="kalaszosegyeb1">Kalászos-Egyéb 1</option>
+  <option value="kalaszosegyeb2">Kalászos-Egyéb 2</option>
+  <option value="kalaszosegyeb3">Kalászos-Egyéb 3</option>
+  <option value="napraforgo">Napraforgó</option>
+  <option value="kukorica">Kukorica</option>
+  <option value="kaposztarepce">Káposztarepce</option>
+  <option value="cirok">Cirok</option>
+  <option value="szojabab">Szójabab</option>
+  <option value="lucerna">Lucerna</option>
+  <option value="zab">Zab</option>
+  <option value="olajlen">Olajlen</option>
+  <option value="mustar">Mustár</option>
+  <option value="cukorrepa">Cukorrépa</option>
+  <option value="nezontofu">Mézontófű</option>
+  <option value="borso">Borsó</option>
+  <option value="bugonya">Burgonya</option>
+  <option value="paprika">Paprika</option>
+  <option value="paradicsom">Paradicsom</option>
+  <option value="egyebzoldseg">Egyéb zöldség</option>
+  <option value="gyep">Gyep</option>
+  <option value="egyeb1">Egyéb 1</option>
+  <option value="egyeb2">Egyéb 2</option>
+  <option value="egyeb3">Egyéb 3</option>
+  <option value="egyeb4">Egyéb 4</option>
+  <option value="egyeb5">Egyéb 5</option>
+</select>
+</td></tr>
+<tr><td>
+Fejlődési Állapot: 
+</td><td>
+<select name="DevState">
+  <option value="T1">T1</option>
+  <option value="T2">T2</option>
+  <option value="T3">T3</option>
+  <option value="T4">T4</option>
+  <option value="egyeb1">Egyéb 1</option>
+  <option value="egyeb2">Egyéb 2</option>
+  <option value="egyeb3">Egyéb 3</option>
+  <option value="egyeb4">Egyéb 4</option>
+  <option value="egyeb5">Egyéb 5</option>
+</select>
+</td></tr>
+<tr><td>
+Megjegyzés (?max 200?):
+</td><td>
+<input type="text" name="comment" id ="comment" value="" maxlength="200">
+</td></tr>
+</table>
+
+</form>
+<p><a href="genxml.html"><b><i>Vissza a kezdőlapra</i></b></a></p>
+
+<script type="text/javascript" language="JavaScript" charset="utf-8">
+ <!--
+
+
+ 
+ $("#videonamefield").change(function(){
+    //parse the video name
+	var filename=document.getElementById("videonamefield").value;
+	if (filename.lastIndexOf("/") > filename.lastIndexOf("\\")){
+		filename=filename.split("/");
+	}
+	else{
+		filename=filename.split("\\");
+	}
+	filename=filename[filename.length - 1];
+	var ExtensionPos = filename.lastIndexOf(".");
+	if (ExtensionPos>-1){
+		filename=filename.substring(0, ExtensionPos);
+	}
+       
+	
+ });
+ 
+ function progressHandler(event){
+	$("#loaded_n_total").html("Uploaded "+event.loaded+" bytes of "+event.total);
+	var percent = (event.loaded / event.total) * 100;
+	$("#progressBar").val(Math.round(percent));
+	$("#status").html(Math.round(percent)+"% uploaded... please wait");
+}
+
+ $("#videouploadbutton").click(function(){
+    //check if fields are correct
+
+    var formData = new FormData($('#uploadform')[0]);
+    var FormFilled=1;
+    if (FormFilled==1 && document.getElementById("videoname").value==''){
+	window.alert("Adja meg a videó nevét!");
+	FormFilled=0;
+    }
+    if (FormFilled==1 && document.getElementById("username").value==''){
+	window.alert("Adja meg a feltöltő nevét");
+	FormFilled=0;
+    }
+    if (FormFilled==1 && document.getElementById("location").value==''){
+	window.alert("Helyszín nincs megadva!");
+	FormFilled=0;
+    }
+
+    if (FormFilled==1 && document.getElementById("time").value==''){
+	window.alert("Idő nincs megadva");
+	FormFilled=0;
+    }
+    
+ 
+
+    if (FormFilled==1){
+
+
+
+    $.ajax({
+        //url: server_geturl("uploadvideofile/upload",[$("#objectsToLoad").val()]),
+        url: "server/uploadvideofile/upload",
+        timeout: 600000,
+        //dataType: "json",
+        type: "POST",
+        data: formData,
+        mimeTypes:"multipart/form-data",
+                processData: false,
+        contentType: false,
+        cache: false,
+        xhr: function() {  // custom xhr
+            myXhr = $.ajaxSettings.xhr();
+            if(myXhr.upload){ // if upload property exists
+                myXhr.upload.addEventListener('progress', progressHandler, false); // progressbar
+            }
+            return myXhr;
+        },
+        success: function(data) {
+            alert(data);
+	    console.log(data);
+        },
+
+	error: function(xmlhttprequest, textstatus, message) {
+        if(textstatus==="timeout") {
+            alert("got timeout");
+        } else {
+            alert(textstatus);
+        }
+    	},
+    });
+    }
+ });
+
+ //-->
+ </script>
+
+
+</body>
+</html>
+
+
+
+

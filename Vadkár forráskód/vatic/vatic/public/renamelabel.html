@@ -1,0 +1,73 @@
+<!DOCTYPE html5>
+<html>
+<head>
+
+<title>vatic rename label</title>
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/smoothness/jquery-ui-1.8.9.custom.css">
+
+<script src="./turkic/javascript.js?v=mar8"></script>
+<script src="./jquery-ui/jquery-ui-1.8.9.custom.min.js?v=mar8"></script>
+
+
+</head>
+<body>
+<form>
+Select Video: <select id="vidname" name="vidname">
+<script language="JavaScript">
+server_request("getvaticnames", '', function(response) {
+response=response.split("\n");
+for (var i = 0; i <  response.length; i++) {
+if (i==0){
+		document.getElementById("vidname").options[i]=new Option(response[i], response[i], true, true);
+	}
+	else{
+		document.getElementById("vidname").options[i]=new Option(response[i], response[i], false, false);
+	}
+
+
+}
+});
+
+
+
+
+
+</script>
+
+
+</select>
+
+</form>
+<script src="renamelabel.js"></script>
+
+<script language="JavaScript">
+function rename(id,label){
+	if (confirm('Are you sure you want to rename this label?')) {
+   		server_request("labelrename", [id,label,document.getElementById(id+"#"+label).value], function(response) {alert(response);});	
+	} else {
+    		// Do nothing!
+	}
+};
+function addlabel(id){
+	if (confirm('Are you sure you want to add this label?')) {
+   		server_request("addlabel", [id,document.getElementById(id).value], function(response) {alert(response);});	
+	} else {
+    		// Do nothing!
+	}
+};
+</script>
+
+<br>
+Labels:<span id="Labels"><span/><br>
+
+
+
+</body>
+</html>
+
+
+
+

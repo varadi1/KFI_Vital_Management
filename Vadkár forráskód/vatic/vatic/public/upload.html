@@ -1,0 +1,59 @@
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/smoothness/jquery-ui-1.8.9.custom.css">
+
+<script src="./turkic/javascript.js?v=mar8"></script>
+<script src="./jquery-ui/jquery-ui-1.8.9.custom.min.js?v=mar8"></script>
+<script src="./videoplayer.js?v=jul1"></script>
+<script src="./preload.js?v=jul1"></script>
+<script src="./objectui.js?v=jul1"></script>
+<script src="./ui.js?v=jul1"></script>
+<script src="./instructions.js?v=jul1"></script>
+<script src="./job.js?v=jul1"></script>
+<script src="./tracks.js?v=jul1"></script>
+<script src="./bootstrap.js?v=jul1"></script>
+
+</head>
+<body>
+
+<script language="JavaScript">
+ <!--
+function BtnClicked(filename){
+	server_request("uploadavi", [filename, document.getElementById("Objects").value], function(response) {alert(response);});
+}
+
+
+ var url = "server/getvideos";
+
+//get directory list
+ $.ajax({
+	     url: url,
+            dataType: "POST",
+            type: "POST",
+	    timeout: 999999999999,
+            data: { param: "test"},
+	     success: function(data) {
+		  document.write("Objects in the video:");
+		  document.write("<br>");
+		  document.write("<input id=\"Objects\" type=\"text\" size=200 name=\"objects\" value=\"TrafficSign ~Stop ~SpeedLimit ~NoTurn ~Yield ~NoOverTaking TrafficLight ~Red ~Amber ~Green Car ~Moving ~RedLightViolation Truck ~Moving ~RedLightViolation Bus ~Moving ~RedLightViolation Bicyclist Pedestrian Face\">");
+		  document.write("<br><br>");
+
+		  document.write("Video directory:");
+		  document.write("<br>");
+                document.write(data);
+	
+
+            },
+            error: function(xhr, textstatus) {
+            		alert(xhr.responseText);
+            }
+        });
+ 
+
+ //-->
+ </script>
+
+
+</body>
+</html>

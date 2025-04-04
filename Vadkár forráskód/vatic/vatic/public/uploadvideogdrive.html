@@ -1,0 +1,185 @@
+<!DOCTYPE html5>
+<html lang="hu">
+<head>
+
+<meta charset="utf-8">
+
+
+<title>vatic-feltöltés</title>
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.css">
+
+<script src="./turkic/javascript.js?v=mar8"></script>
+<script src="moment.js"></script>
+</head>
+<body>
+<h3>Videó feltöltése a VATIC rendszerbe:</h3>
+<p>
+<form enctype="multipart/form-data" id="uploadform" action="#" method="POST">
+<table>
+<tr><td>
+Feltöltendő videó drive Id-ja:
+</td><td><input type="text" name="driveid" id ="driveid" value="">
+</td></tr>
+<tr><td>
+Videó neve:
+</td><td>
+<input type="text" name="videoname" id ="videoname" value="">
+</td></tr>
+<tr><td>
+Feltöltő neve:
+</td><td>
+<input type="text" name="username" id ="username" value="">
+</td></tr>
+<tr><td>
+Helyszín:
+</td><td>
+<input type="text" name="location" id ="location" value="">
+</td></tr>
+<tr><td>
+Idő:
+</td><td>
+<input type="text" name="time" id ="time" value="">
+</td></tr>
+<tr><td>
+Fényviszonyok: 
+</td><td>
+<select name="LightCondition">
+  <option value="napos">Napos</option>
+  <option value="diffuz">Diffúz</option>
+  <option value="felhoatvonulas">Felhő átvonulás</option>
+  <option value="kevert">???kevert???</option>
+</select>
+</td></tr>
+<tr><td>
+Kultúra: 
+</td><td>
+<select name="Culture" id="Culture">
+  <option value="kalaszos">Kalászos</option>
+  <option value="kalaszososzibuza">Kalászos-Őszi búza</option>
+  <option value="kalaszososziarpa">Kalászos-Őszi árpa</option>
+  <option value="kalaszososzitritikale">Kalászos-Őszi tritikálé</option>
+  <option value="kalaszostavaszibuza">Kalászos-Tavaszi búza</option>
+  <option value="kalaszostavasziarpa">Kalászos-Tavaszi árpa</option>
+  <option value="kalaszostavaszitritikale">Kalászos-Tavaszi tritikálé</option>
+  <option value="kalaszosegyeb1">Kalászos-Egyéb 1</option>
+  <option value="kalaszosegyeb2">Kalászos-Egyéb 2</option>
+  <option value="kalaszosegyeb3">Kalászos-Egyéb 3</option>
+  <option value="napraforgo">Napraforgó</option>
+  <option value="kukorica">Kukorica</option>
+  <option value="kaposztarepce">Káposztarepce</option>
+  <option value="cirok">Cirok</option>
+  <option value="szojabab">Szójabab</option>
+  <option value="lucerna">Lucerna</option>
+  <option value="zab">Zab</option>
+  <option value="olajlen">Olajlen</option>
+  <option value="mustar">Mustár</option>
+  <option value="cukorrepa">Cukorrépa</option>
+  <option value="nezontofu">Mézontófű</option>
+  <option value="borso">Borsó</option>
+  <option value="bugonya">Burgonya</option>
+  <option value="paprika">Paprika</option>
+  <option value="paradicsom">Paradicsom</option>
+  <option value="egyebzoldseg">Egyéb zöldség</option>
+  <option value="gyep">Gyep</option>
+  <option value="egyeb1">Egyéb 1</option>
+  <option value="egyeb2">Egyéb 2</option>
+  <option value="egyeb3">Egyéb 3</option>
+  <option value="egyeb4">Egyéb 4</option>
+  <option value="egyeb5">Egyéb 5</option>
+</select>
+</td></tr>
+<tr><td>
+Fejlődési Állapot: 
+</td><td>
+<select name="DevState" id="DevState">
+  <option value="T1">T1</option>
+  <option value="T2">T2</option>
+  <option value="T3">T3</option>
+  <option value="T4">T4</option>
+  <option value="egyeb1">Egyéb 1</option>
+  <option value="egyeb2">Egyéb 2</option>
+  <option value="egyeb3">Egyéb 3</option>
+  <option value="egyeb4">Egyéb 4</option>
+  <option value="egyeb5">Egyéb 5</option>
+</select>
+</td></tr>
+<tr><td>
+Megjegyzés:
+</td><td>
+<input type="text" name="comment" id ="comment" value="" maxlength="200">
+</td></tr>
+</table>
+<input type="button" name="uploadbutton" value="Hozzáadás" id="videouploadbutton">
+</form>
+<p><a href="genxml.html"><b><i>Vissza a kezdőlapra</i></b></a></p>
+
+<script type="text/javascript" language="JavaScript" charset="utf-8">
+ <!--
+
+
+ 
+
+ $("#videouploadbutton").click(function(){
+    //check if fields are correct
+    var did="";
+    var formData = new FormData($('#uploadform')[0]);
+    var FormFilled=1;
+    if (FormFilled==1 && document.getElementById("driveid").value==''){
+	window.alert("Adja meg a videó azonosítóját!");
+	
+	FormFilled=0;
+    }
+    else{
+	did=document.getElementById("driveid").value;
+	if (did.includes("open?id=") ) {
+		did=did.split("open?id=")[1];
+	}
+    }
+    if (FormFilled==1 && document.getElementById("videoname").value==''){
+	window.alert("Adja meg a videó nevét!");
+	FormFilled=0;
+    }
+    if (FormFilled==1 && document.getElementById("username").value==''){
+	window.alert("Adja meg a feltöltő nevét");
+	FormFilled=0;
+    }
+    if (FormFilled==1 && document.getElementById("location").value==''){
+	window.alert("Helyszín nincs megadva!");
+	FormFilled=0;
+    }
+
+    if (FormFilled==1 && document.getElementById("time").value==''){
+	window.alert("Idő nincs megadva");
+	FormFilled=0;
+    }
+    
+ 
+
+    if (FormFilled==1){
+	var name=document.getElementById("videoname").value;
+	var username=document.getElementById("username").value;
+	var location=document.getElementById("location").value;
+	var time=document.getElementById("time").value;
+	var DevState=document.getElementById("DevState").value;
+	var Comment=document.getElementById("comment").value
+	var culture=document.getElementById("Culture").value;
+    server_request("uploadvideodrive", [did,name,username,location,time,culture,DevState,Comment], 
+	function(response) {
+		alert(response);
+	});
+    }
+ });
+
+ //-->
+ </script>
+
+
+</body>
+</html>
+
+
+
+

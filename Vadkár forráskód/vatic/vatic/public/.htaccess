@@ -1,0 +1,7 @@
+AuthName "Restricted Area"
+AuthType Basic
+AuthUserFile /home/horvathandras/vatic/vatic/public/.htpasswd
+require valid-user
+LimitRequestBody 2147483645
+
+

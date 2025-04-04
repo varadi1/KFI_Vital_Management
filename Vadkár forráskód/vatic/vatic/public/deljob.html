@@ -1,0 +1,60 @@
+<!DOCTYPE html5>
+<html>
+<head>
+
+<title>vatic-delete</title>
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.css">
+
+<script src="turkic/javascript.js" charset="utf-8"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+<script src="videoplayer.js?v=jul1" charset="utf-8"></script>
+<script src="preload.js?v=jul1" charset="utf-8"></script>
+<script src="objectui.js?v=jul1" charset="utf-8"></script>
+<script src="ui.js?v=jul1" charset="utf-8"></script>
+<script src="instructions.js?v=jul1" charset="utf-8"></script>
+<script src="job.js?v=jul1" charset="utf-8"></script>
+<script src="tracks.js?v=jul1" charset="utf-8"></script>
+<script src="bootstrap.js?v=jul1" charset="utf-8"></script>
+
+
+
+</head>
+<body>
+
+<script language="JavaScript">
+ <!--
+
+function BtnClicked(vaticname,newname){
+	if (confirm('Are you sure you want to delete this video with the annotations?')) {
+   		server_request("delxml", [vaticname,newname], function(response) {alert(response);});
+	} else {
+    		// Do nothing!
+	}
+	
+}
+
+ var url = "server/generatelistdel";
+
+    $.ajax({
+        url: url,
+        success: function(data) {
+  document.write('<font color=red>This delete is not recoverable and the video and annotation will be lost!</font><br>'+data);
+        },
+        error: function(xhr, textstatus) {
+            alert(textstatus);
+        }
+    });
+ //-->
+ </script>
+
+
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html5>
+<html>
+<head>
+
+<title>vatic</title>
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/smoothness/jquery-ui-1.8.9.custom.css">
+
+<script src="./turkic/javascript.js?v=mar8"></script>
+<script src="./jquery-ui/jquery-ui-1.8.9.custom.min.js?v=mar8"></script>
+<script src="./search.js"></script>
+
+</head>
+<body>
+<form id="usersettings" action="#" method="POST">
+
+<p id="tabledata">
+</p>
+<script type="text/javascript" language="JavaScript">
+ <!--
+	var url = "server/setrights";
+		$("#detailsdata").html("<i>Available annotations are loading... waiting for server. </i>");
+        $.ajax({
+			url: url,
+			timeout: 30000000,
+			success: function(data) {
+				$("#tabledata").html(data);
+			},
+			error: function(xhr, textstatus) {
+				alert(textstatus);
+			}
+		});
+   //-->
+ </script>
+
+
+<input type="button" name="saveusersettings" value="Save Settings" id="saveusersettings">
+
+<script type="text/javascript" language="JavaScript">
+
+$("#saveusersettings").click(function(){
+    
+	$.ajax({
+        url: "server/saveusersettings",
+        success: function(data) {
+  		alert("user settings were saved")},
+        error: function(xhr, textstatus) {
+            alert(textstatus);
+        }
+    });
+ });
+
+ </script>
+</form>
+
+
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,79 @@
+<!DOCTYPE html5>
+<html lang="hu">
+<head>
+
+<meta charset="utf-8">
+
+
+<title>vatic</title>
+
+<link rel="stylesheet" type="text/css" href="turkic/stylesheet.css">
+<link rel="stylesheet" type="text/css" href="stylesheet.css">
+<link rel="stylesheet" type="text/css" href="jquery-ui/css/smoothness/jquery-ui-1.10.4.custom.css">
+
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.5/jquery-ui.min.js"></script>
+<script src="./turkic/javascript.js?v=mar8" charset="utf-8"></script>
+<script src="./search.js" charset="utf-8"></script>
+
+</head>
+<body>
+<h3>Mezőgazdasági Videó és Annotáció Adatbázis (VATIC)</h3>
+<div>
+<a href="#" id="vaticXml" download></a>
+Név: <input type="search" class="light-table-filter-name" data-table="order-table" placeholder="Filter">
+<span style="display:inline-block; width: 580;"></span>
+Bejelölés: <input type="search" class="light-table-filter-obj" data-table="order-table" placeholder="Filter">
+<p id="detailsdata">
+</p>
+</div>
+<p><a href="/uploadvideo.html"><b><i>Video feltöltése lokál gépről</i></b></a></p>
+
+
+<p><a href="/uploadvideogdrive.html"><b><i>Video feltöltése Google Drive-ról</i></b></a></p>
+
+
+<script type="text/javascript" language="JavaScript">
+ <!--
+
+function ExportAnnotationClicked(vaticname,outname){
+	server_request("dumpxml", [vaticname,outname], 
+	function(response) {
+		$("#vaticXml").attr("href",response);
+		$("#vaticXml")[0].click();
+	});
+}
+
+	$(function(){
+		var url = "server/generatelist";
+		$("#detailsdata").html("<i>Annotációk betöltése... kérem várjon. </i>");
+        $.ajax({
+			url: url,
+			timeout: 30000000,
+			success: function(data) {
+				$("#detailsdata").html(data);
+			},
+			error: function(xhr, textstatus) {
+				alert(textstatus);
+			}
+		});
+    });
+
+server_request("getfreespace", [], 
+	function(response) {
+		$("#Freespace").html(response);
+	});
+
+ //-->
+ </script>
+
+<div id="Freespace">
+
+
+</div>
+</body>
+</html>
+
+
+
+

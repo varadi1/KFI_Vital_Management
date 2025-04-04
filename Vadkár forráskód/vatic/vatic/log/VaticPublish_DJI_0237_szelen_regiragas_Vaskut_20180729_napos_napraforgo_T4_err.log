@@ -1,0 +1,67 @@
++ filenameToUse=/home/horvathandras/vatic/vatic/public/videouploads/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4.avi
++ filenameNoDot=DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4
++ FullUploadPath=/home/horvathandras/vatic/vatic/public/videouploads/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4.avi
++ VideoDataDir=/home/horvathandras/vatic/vatic/videos
++ AvailableObjectTypes='PozitívROI NegatívROI Túrás ~Friss ~1-2Hetes ~Régebbi ~Egyéb1 ~Egyéb2 ~Egyéb3 Rágás ~Friss ~1-2Hetes ~Régebbi ~Egyéb1 ~Egyéb2 ~Egyéb3 Törés ~Friss ~1-2Hetes ~Régebbi ~Egyéb1 ~Egyéb2 ~Egyéb3 Taposás ~Friss ~1-2Hetes ~Régebbi ~Egyéb1 ~Egyéb2 ~Egyéb3 EgészségesNövény Egyéb1 Egyéb2 Egyéb3 Egyéb4 Egyéb5 Bizonytalan Művelőút Gktaposás Vetőhiba Széldöntés Jégkár Belvíz Aszály Erózió EgyszikűGyom KétszikűGyom EgyébNövvédelmiPR'
+++ dirname /home/horvathandras/vatic/vatic/vatic_publisher.sh
++ cd /home/horvathandras/vatic/vatic
++ touch /home/horvathandras/vatic/vatic/public/videouploads/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4.avi
++ chmod 744 /home/horvathandras/vatic/vatic/public/videouploads/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4.avi
++ mkdir /home/horvathandras/vatic/vatic/videos/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4
++ turkic extract /home/horvathandras/vatic/vatic/public/videouploads/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4.avi /home/horvathandras/vatic/vatic/videos/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4 --no-resize
+ffmpeg version 2.8.14-0ubuntu0.16.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --prefix=/usr --extra-version=0ubuntu0.16.04.1 --build-suffix=-ffmpeg --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --cc=cc --cxx=g++ --enable-gpl --enable-shared --disable-stripping --disable-decoder=libopenjpeg --disable-decoder=libschroedinger --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmodplug --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libpulse --enable-librtmp --enable-libschroedinger --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxvid --enable-libzvbi --enable-openal --enable-opengl --enable-x11grab --enable-libdc1394 --enable-libiec61883 --enable-libzmq --enable-frei0r --enable-libx264 --enable-libopencv
+  libavutil      54. 31.100 / 54. 31.100
+  libavcodec     56. 60.100 / 56. 60.100
+  libavformat    56. 40.101 / 56. 40.101
+  libavdevice    56.  4.100 / 56.  4.100
+  libavfilter     5. 40.101 /  5. 40.101
+  libavresample   2.  1.  0 /  2.  1.  0
+  libswscale      3.  1.101 /  3.  1.101
+  libswresample   1.  2.101 /  1.  2.101
+  libpostproc    53.  3.100 / 53.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/horvathandras/vatic/vatic/public/videouploads/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4.avi':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 537986816
+    compatible_brands: qt  
+    creation_time   : 2018-07-29 07:31:19
+    location        : +46.073282+18.994335+30.500
+    location-{    : +46.073282+18.994335+30.500
+    comment         : DE=None, Mode=P, DSW=0001
+  Duration: 00:00:09.00, start: 0.000000, bitrate: 101271 kb/s
+    Stream #0:0(eng): Video: h264 (High) (avc1 / 0x31637661), yuv420p(tv, bt709), 4096x2160 [SAR 1:1 DAR 256:135], 101261 kb/s, 50 fps, 50 tbr, 50k tbn, 100 tbc (default)
+    Metadata:
+      creation_time   : 2018-07-29 07:31:19
+      handler_name    : DJI.AVC
+      encoder         : AVC encoder
+    Stream #0:1(eng): Data: none (priv / 0x76697270), 4 kb/s
+    Metadata:
+      creation_time   : 2018-07-29 07:31:19
+      handler_name    : DJI.Meta
+Please use -b:a or -b:v, -b is ambiguous
+[swscaler @ 0x864be0] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to '/tmp/pyvision-ffmpeg-183606540/%d.jpg':
+  Metadata:
+    major_brand     : qt  
+    minor_version   : 537986816
+    compatible_brands: qt  
+    comment         : DE=None, Mode=P, DSW=0001
+    location        : +46.073282+18.994335+30.500
+    location-{    : +46.073282+18.994335+30.500
+    encoder         : Lavf56.40.101
+    Stream #0:0(eng): Video: mjpeg, yuvj420p(pc), 4096x2160 [SAR 1:1 DAR 256:135], q=2-31, 10000 kb/s, 50 fps, 50 tbn, 50 tbc (default)
+    Metadata:
+      creation_time   : 2018-07-29 07:31:19
+      handler_name    : DJI.AVC
+      encoder         : Lavc56.60.100 mjpeg
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+frame=    1 fps=0.0 q=20.7 size=N/A time=00:00:00.02 bitrate=N/A    frame=    5 fps=4.4 q=24.8 size=N/A time=00:00:00.10 bitrate=N/A    frame=   10 fps=5.7 q=24.8 size=N/A time=00:00:00.20 bitrate=N/A    frame=   15 fps=6.4 q=24.8 size=N/A time=00:00:00.30 bitrate=N/A    frame=   20 fps=6.8 q=24.8 size=N/A time=00:00:00.40 bitrate=N/A    frame=   25 fps=7.1 q=24.8 size=N/A time=00:00:00.50 bitrate=N/A    frame=   30 fps=7.3 q=24.8 size=N/A time=00:00:00.60 bitrate=N/A    frame=   33 fps=7.1 q=24.8 size=N/A time=00:00:00.66 bitrate=N/A    frame=   37 fps=7.1 q=24.8 size=N/A time=00:00:00.74 bitrate=N/A    frame=   42 fps=7.2 q=24.8 size=N/A time=00:00:00.84 bitrate=N/A    frame=   46 fps=7.1 q=24.8 size=N/A time=00:00:00.92 bitrate=N/A    frame=   51 fps=7.2 q=24.8 size=N/A time=00:00:01.02 bitrate=N/A    frame=   56 fps=7.3 q=24.8 size=N/A time=00:00:01.12 bitrate=N/A    frame=   60 fps=7.3 q=24.8 size=N/A time=00:00:01.20 bitrate=N/A    frame=   65 fps=7.4 q=24.8 size=N/A time=00:00:01.30 bitrate=N/A    frame=   70 fps=7.5 q=24.8 size=N/A time=00:00:01.40 bitrate=N/A    frame=   75 fps=7.5 q=24.8 size=N/A time=00:00:01.50 bitrate=N/A    frame=   80 fps=7.6 q=24.8 size=N/A time=00:00:01.60 bitrate=N/A    frame=   85 fps=7.6 q=24.8 size=N/A time=00:00:01.70 bitrate=N/A    frame=   90 fps=7.6 q=24.8 size=N/A time=00:00:01.80 bitrate=N/A    frame=   95 fps=7.7 q=24.8 size=N/A time=00:00:01.90 bitrate=N/A    frame=  100 fps=7.7 q=24.8 size=N/A time=00:00:02.00 bitrate=N/A    frame=  105 fps=7.7 q=24.8 size=N/A time=00:00:02.10 bitrate=N/A    frame=  110 fps=7.8 q=24.8 size=N/A time=00:00:02.20 bitrate=N/A    frame=  115 fps=7.8 q=24.8 size=N/A time=00:00:02.30 bitrate=N/A    frame=  120 fps=7.8 q=24.8 size=N/A time=00:00:02.40 bitrate=N/A    frame=  125 fps=7.8 q=24.8 size=N/A time=00:00:02.50 bitrate=N/A    frame=  130 fps=7.8 q=24.8 size=N/A time=00:00:02.60 bitrate=N/A    frame=  135 fps=7.9 q=24.8 size=N/A time=00:00:02.70 bitrate=N/A    frame=  140 fps=7.9 q=24.8 size=N/A time=00:00:02.80 bitrate=N/A    frame=  145 fps=7.9 q=24.8 size=N/A time=00:00:02.90 bitrate=N/A    frame=  149 fps=7.9 q=24.8 size=N/A time=00:00:02.98 bitrate=N/A    frame=  154 fps=7.9 q=24.8 size=N/A time=00:00:03.08 bitrate=N/A    frame=  159 fps=7.9 q=24.8 size=N/A time=00:00:03.18 bitrate=N/A    frame=  164 fps=7.9 q=24.8 size=N/A time=00:00:03.28 bitrate=N/A    frame=  169 fps=7.9 q=24.8 size=N/A time=00:00:03.38 bitrate=N/A    frame=  174 fps=8.0 q=24.8 size=N/A time=00:00:03.48 bitrate=N/A    frame=  179 fps=7.9 q=24.8 size=N/A time=00:00:03.58 bitrate=N/A    frame=  184 fps=7.9 q=24.8 size=N/A time=00:00:03.68 bitrate=N/A    frame=  189 fps=8.0 q=24.8 size=N/A time=00:00:03.78 bitrate=N/A    frame=  194 fps=8.0 q=24.8 size=N/A time=00:00:03.88 bitrate=N/A    frame=  199 fps=8.0 q=24.8 size=N/A time=00:00:03.98 bitrate=N/A    frame=  204 fps=8.0 q=24.8 size=N/A time=00:00:04.08 bitrate=N/A    frame=  209 fps=8.0 q=24.8 size=N/A time=00:00:04.18 bitrate=N/A    frame=  214 fps=8.0 q=24.8 size=N/A time=00:00:04.28 bitrate=N/A    frame=  219 fps=8.0 q=24.8 size=N/A time=00:00:04.38 bitrate=N/A    frame=  224 fps=8.0 q=24.8 size=N/A time=00:00:04.48 bitrate=N/A    frame=  229 fps=8.0 q=24.8 size=N/A time=00:00:04.58 bitrate=N/A    frame=  234 fps=8.0 q=24.8 size=N/A time=00:00:04.68 bitrate=N/A    frame=  239 fps=8.0 q=24.8 size=N/A time=00:00:04.78 bitrate=N/A    frame=  244 fps=8.0 q=24.8 size=N/A time=00:00:04.88 bitrate=N/A    frame=  249 fps=8.0 q=24.8 size=N/A time=00:00:04.98 bitrate=N/A    frame=  254 fps=8.0 q=24.8 size=N/A time=00:00:05.08 bitrate=N/A    frame=  259 fps=8.0 q=24.8 size=N/A time=00:00:05.18 bitrate=N/A    frame=  264 fps=8.0 q=24.8 size=N/A time=00:00:05.28 bitrate=N/A    frame=  269 fps=8.0 q=24.8 size=N/A time=00:00:05.38 bitrate=N/A    frame=  274 fps=8.0 q=24.8 size=N/A time=00:00:05.48 bitrate=N/A    frame=  279 fps=8.1 q=24.8 size=N/A time=00:00:05.58 bitrate=N/A    frame=  284 fps=8.1 q=24.8 size=N/A time=00:00:05.68 bitrate=N/A    frame=  289 fps=8.1 q=24.8 size=N/A time=00:00:05.78 bitrate=N/A    frame=  294 fps=8.1 q=24.8 size=N/A time=00:00:05.88 bitrate=N/A    frame=  299 fps=8.1 q=24.8 size=N/A time=00:00:05.98 bitrate=N/A    frame=  304 fps=8.1 q=24.8 size=N/A time=00:00:06.08 bitrate=N/A    frame=  309 fps=8.1 q=24.8 size=N/A time=00:00:06.18 bitrate=N/A    frame=  314 fps=8.1 q=24.8 size=N/A time=00:00:06.28 bitrate=N/A    frame=  319 fps=8.1 q=24.8 size=N/A time=00:00:06.38 bitrate=N/A    frame=  324 fps=8.1 q=24.8 size=N/A time=00:00:06.48 bitrate=N/A    frame=  329 fps=8.1 q=24.8 size=N/A time=00:00:06.58 bitrate=N/A    frame=  334 fps=8.1 q=24.8 size=N/A time=00:00:06.68 bitrate=N/A    frame=  339 fps=8.1 q=24.8 size=N/A time=00:00:06.78 bitrate=N/A    frame=  344 fps=8.1 q=24.8 size=N/A time=00:00:06.88 bitrate=N/A    frame=  349 fps=8.1 q=24.8 size=N/A time=00:00:06.98 bitrate=N/A    frame=  354 fps=8.1 q=24.8 size=N/A time=00:00:07.08 bitrate=N/A    frame=  359 fps=8.1 q=24.8 size=N/A time=00:00:07.18 bitrate=N/A    frame=  363 fps=8.1 q=24.8 size=N/A time=00:00:07.26 bitrate=N/A    frame=  368 fps=8.1 q=24.8 size=N/A time=00:00:07.36 bitrate=N/A    frame=  373 fps=8.1 q=24.8 size=N/A time=00:00:07.46 bitrate=N/A    frame=  378 fps=8.1 q=24.8 size=N/A time=00:00:07.56 bitrate=N/A    frame=  383 fps=8.1 q=24.8 size=N/A time=00:00:07.66 bitrate=N/A    frame=  388 fps=8.1 q=24.8 size=N/A time=00:00:07.76 bitrate=N/A    frame=  392 fps=8.1 q=24.8 size=N/A time=00:00:07.84 bitrate=N/A    frame=  397 fps=8.1 q=24.8 size=N/A time=00:00:07.94 bitrate=N/A    frame=  402 fps=8.1 q=24.8 size=N/A time=00:00:08.04 bitrate=N/A    frame=  407 fps=8.1 q=24.8 size=N/A time=00:00:08.14 bitrate=N/A    frame=  412 fps=8.1 q=24.8 size=N/A time=00:00:08.24 bitrate=N/A    frame=  417 fps=8.1 q=24.8 size=N/A time=00:00:08.34 bitrate=N/A    frame=  421 fps=8.1 q=24.8 size=N/A time=00:00:08.42 bitrate=N/A    frame=  426 fps=8.1 q=24.8 size=N/A time=00:00:08.52 bitrate=N/A    frame=  431 fps=8.1 q=24.8 size=N/A time=00:00:08.62 bitrate=N/A    frame=  436 fps=8.1 q=24.8 size=N/A time=00:00:08.72 bitrate=N/A    frame=  441 fps=8.1 q=24.8 size=N/A time=00:00:08.82 bitrate=N/A    frame=  446 fps=8.1 q=24.8 size=N/A time=00:00:08.92 bitrate=N/A    frame=  450 fps=8.1 q=24.8 size=N/A time=00:00:09.00 bitrate=N/A    frame=  450 fps=8.1 q=24.8 Lsize=N/A time=00:00:09.00 bitrate=N/A    
+video:404362kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
++ turkic load DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4 /home/horvathandras/vatic/vatic/videos/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4 $'Pozit\303\255vROI' $'Negat\303\255vROI' $'T\303\272r\303\241s' '~Friss' '~1-2Hetes' '~Régebbi' '~Egyéb1' '~Egyéb2' '~Egyéb3' $'R\303\241g\303\241s' '~Friss' '~1-2Hetes' '~Régebbi' '~Egyéb1' '~Egyéb2' '~Egyéb3' $'T\303\266r\303\251s' '~Friss' '~1-2Hetes' '~Régebbi' '~Egyéb1' '~Egyéb2' '~Egyéb3' $'Tapos\303\241s' '~Friss' '~1-2Hetes' '~Régebbi' '~Egyéb1' '~Egyéb2' '~Egyéb3' $'Eg\303\251szs\303\251gesN\303\266v\303\251ny' $'Egy\303\251b1' $'Egy\303\251b2' $'Egy\303\251b3' $'Egy\303\251b4' $'Egy\303\251b5' Bizonytalan $'M\305\261vel\305\221\303\272t' $'Gktapos\303\241s' $'Vet\305\221hiba' $'Sz\303\251ld\303\266nt\303\251s' $'J\303\251gk\303\241r' $'Belv\303\255z' $'Asz\303\241ly' $'Er\303\263zi\303\263' $'Egyszik\305\261Gyom' $'K\303\251tszik\305\261Gyom' $'Egy\303\251bN\303\266vv\303\251delmiPR' --offline --title '$filenameNoDot Video' --length 1000 --description 'vatic annotation'
++ turkic publish --offline
++ mkdir /home/horvathandras/vatic/vatic/public/videothumbnails/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4
++ cp /home/horvathandras/vatic/vatic/videos/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4/0/0/31.jpg /home/horvathandras/vatic/vatic/public/videothumbnails/DJI_0237_szelen_regiragas_Vaskut_20180729_napos_napraforgo_T4/thumb.jpg

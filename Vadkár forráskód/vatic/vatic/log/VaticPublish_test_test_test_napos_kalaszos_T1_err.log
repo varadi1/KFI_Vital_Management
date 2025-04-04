@@ -1,0 +1,60 @@
++ filenameToUse=/home/horvathandras/vatic/vatic/public/videouploads/test.avi
++ filenameNoDot=test_test_test_napos_kalaszos_T1
++ FullUploadPath=/home/horvathandras/vatic/vatic/public/videouploads/test.avi
++ VideoDataDir=/home/horvathandras/vatic/vatic/videos
++ AvailableObjectTypes='PozitívROI NegatívROI Túrás ~Friss ~Régebbi Rágás ~Friss ~Régebbi Törés ~Friss ~Régebbi Taposás ~Friss ~Régebbi EgészségesNövény Egyéb1 Egyéb2 Egyéb3 Egyéb4 Egyéb5'
+++ dirname /home/horvathandras/vatic/vatic/vatic_publisher.sh
++ cd /home/horvathandras/vatic/vatic
++ touch /home/horvathandras/vatic/vatic/public/videouploads/test.avi
++ chmod 744 /home/horvathandras/vatic/vatic/public/videouploads/test.avi
++ mkdir /home/horvathandras/vatic/vatic/videos/test_test_test_napos_kalaszos_T1
++ turkic extract /home/horvathandras/vatic/vatic/public/videouploads/test.avi /home/horvathandras/vatic/vatic/videos/test_test_test_napos_kalaszos_T1 --no-resize
+ffmpeg version 2.8.14-0ubuntu0.16.04.1 Copyright (c) 2000-2018 the FFmpeg developers
+  built with gcc 5.4.0 (Ubuntu 5.4.0-6ubuntu1~16.04.9) 20160609
+  configuration: --prefix=/usr --extra-version=0ubuntu0.16.04.1 --build-suffix=-ffmpeg --toolchain=hardened --libdir=/usr/lib/x86_64-linux-gnu --incdir=/usr/include/x86_64-linux-gnu --cc=cc --cxx=g++ --enable-gpl --enable-shared --disable-stripping --disable-decoder=libopenjpeg --disable-decoder=libschroedinger --enable-avresample --enable-avisynth --enable-gnutls --enable-ladspa --enable-libass --enable-libbluray --enable-libbs2b --enable-libcaca --enable-libcdio --enable-libflite --enable-libfontconfig --enable-libfreetype --enable-libfribidi --enable-libgme --enable-libgsm --enable-libmodplug --enable-libmp3lame --enable-libopenjpeg --enable-libopus --enable-libpulse --enable-librtmp --enable-libschroedinger --enable-libshine --enable-libsnappy --enable-libsoxr --enable-libspeex --enable-libssh --enable-libtheora --enable-libtwolame --enable-libvorbis --enable-libvpx --enable-libwavpack --enable-libwebp --enable-libx265 --enable-libxvid --enable-libzvbi --enable-openal --enable-opengl --enable-x11grab --enable-libdc1394 --enable-libiec61883 --enable-libzmq --enable-frei0r --enable-libx264 --enable-libopencv
+  libavutil      54. 31.100 / 54. 31.100
+  libavcodec     56. 60.100 / 56. 60.100
+  libavformat    56. 40.101 / 56. 40.101
+  libavdevice    56.  4.100 / 56.  4.100
+  libavfilter     5. 40.101 /  5. 40.101
+  libavresample   2.  1.  0 /  2.  1.  0
+  libswscale      3.  1.101 /  3.  1.101
+  libswresample   1.  2.101 /  1.  2.101
+  libpostproc    53.  3.100 / 53.  3.100
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from '/home/horvathandras/vatic/vatic/public/videouploads/test.avi':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    creation_time   : 2016-08-13 20:35:26
+  Duration: 00:00:15.02, start: 0.000000, bitrate: 2435 kb/s
+    Stream #0:0(und): Video: h264 (Main) (avc1 / 0x31637661), yuv420p(tv, bt709), 1280x720 [SAR 1:1 DAR 16:9], 2306 kb/s, 29.97 fps, 29.97 tbr, 90k tbn, 59.94 tbc (default)
+    Metadata:
+      creation_time   : 2016-08-13 20:35:26
+      handler_name    : ISO Media file produced by Google Inc.
+    Stream #0:1(und): Audio: aac (LC) (mp4a / 0x6134706D), 44100 Hz, stereo, fltp, 125 kb/s (default)
+    Metadata:
+      creation_time   : 2016-08-13 20:35:26
+      handler_name    : ISO Media file produced by Google Inc.
+Please use -b:a or -b:v, -b is ambiguous
+[swscaler @ 0xcb59e0] deprecated pixel format used, make sure you did set range correctly
+Output #0, image2, to '/tmp/pyvision-ffmpeg-591815943/%d.jpg':
+  Metadata:
+    major_brand     : mp42
+    minor_version   : 0
+    compatible_brands: isommp42
+    encoder         : Lavf56.40.101
+    Stream #0:0(und): Video: mjpeg, yuvj420p(pc), 1280x720 [SAR 1:1 DAR 16:9], q=2-31, 10000 kb/s, 29.97 fps, 29.97 tbn, 29.97 tbc (default)
+    Metadata:
+      creation_time   : 2016-08-13 20:35:26
+      handler_name    : ISO Media file produced by Google Inc.
+      encoder         : Lavc56.60.100 mjpeg
+Stream mapping:
+  Stream #0:0 -> #0:0 (h264 (native) -> mjpeg (native))
+Press [q] to stop, [?] for help
+frame=   46 fps=0.0 q=24.8 size=N/A time=00:00:01.53 bitrate=N/A    frame=   90 fps= 89 q=24.8 size=N/A time=00:00:03.00 bitrate=N/A    frame=  134 fps= 89 q=24.8 size=N/A time=00:00:04.47 bitrate=N/A    frame=  184 fps= 91 q=24.8 size=N/A time=00:00:06.13 bitrate=N/A    frame=  229 fps= 91 q=24.8 size=N/A time=00:00:07.64 bitrate=N/A    frame=  274 fps= 90 q=24.8 size=N/A time=00:00:09.14 bitrate=N/A    frame=  320 fps= 90 q=24.8 size=N/A time=00:00:10.67 bitrate=N/A    frame=  371 fps= 92 q=24.8 size=N/A time=00:00:12.37 bitrate=N/A    frame=  416 fps= 91 q=24.8 size=N/A time=00:00:13.88 bitrate=N/A    frame=  450 fps= 91 q=24.8 Lsize=N/A time=00:00:15.01 bitrate=N/A    
+video:28066kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: unknown
++ turkic load test_test_test_napos_kalaszos_T1 /home/horvathandras/vatic/vatic/videos/test_test_test_napos_kalaszos_T1 $'Pozit\303\255vROI' $'Negat\303\255vROI' $'T\303\272r\303\241s' '~Friss' '~Régebbi' $'R\303\241g\303\241s' '~Friss' '~Régebbi' $'T\303\266r\303\251s' '~Friss' '~Régebbi' $'Tapos\303\241s' '~Friss' '~Régebbi' $'Eg\303\251szs\303\251gesN\303\266v\303\251ny' $'Egy\303\251b1' $'Egy\303\251b2' $'Egy\303\251b3' $'Egy\303\251b4' $'Egy\303\251b5' --offline --title '$filenameNoDot Video' --length 1000 --description 'vatic annotation'
++ turkic publish --offline
++ mkdir /home/horvathandras/vatic/vatic/public/videothumbnails/test_test_test_napos_kalaszos_T1
++ cp /home/horvathandras/vatic/vatic/videos/test_test_test_napos_kalaszos_T1/0/0/31.jpg /home/horvathandras/vatic/vatic/public/videothumbnails/test_test_test_napos_kalaszos_T1/thumb.jpg
